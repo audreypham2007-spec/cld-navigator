@@ -1,0 +1,9 @@
+# .streamlit/config.toml - the colors and fonts for the whole site
+
+[theme]
+base = "light"
+primaryColor = "#1F6F78"            # teal: buttons, sliders, links
+backgroundColor = "#FBFAF7"         # warm off-white page
+secondaryBackgroundColor = "#EEF3F2" # sidebar and boxes
+textColor = "#1E2A2E"
+font = "sans serif"

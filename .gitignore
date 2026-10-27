@@ -3,3 +3,6 @@ venv/
 __pycache__/
 *.pyc
 .streamlit/secrets.toml
+
+# The database holds test cases, so keep it off GitHub
+*.db
