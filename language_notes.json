@@ -1,4 +1,22 @@
 {
+  "Spanish": {
+    "summary": "The most common home language of California English learners. Many English errors, like dropped final consonants, can reflect Spanish influence rather than a disorder.",
+    "california_share": 81.9,
+    "sections": {
+      "Sounds": "Spanish has five vowel phonemes (/a e i o u/), while English has many more vowels, including many diphthongs, so English vowel pairs like \"seat\" and \"sit\" can be hard to tell apart. Spanish uses only five word-final consonants (/s, n, r, l, d/), so dropping final consonants or simplifying final clusters in English may reflect Spanish influence rather than a disorder. Spanish lacks or treats differently some English sounds, such as the \"th\" sounds and the \"sh\" versus \"ch\" contrast.",
+      "Development": "Across 27 languages, including Spanish, most consonants were acquired by age 5;0, and by 5;0 children produced at least 93% of consonants correctly. Plosives and nasals were acquired earlier than trills and flaps, so the Spanish trill may still be developing in young children.",
+      "Language": "In a study of 5-year-olds, Spanish-English bilingual children did not differ significantly from monolingual Spanish or English peers in segmental accuracy, syllabic accuracy, or phonological patterns, and cross-linguistic effects were limited. How much the child used each language did not predict phonological skills, so assess phonology directly in both languages. The sample was small (15 children).",
+      "Assessment tools": "Bilingual English-Spanish Assessment (BESA; Peña, Gutiérrez-Clellen, Iglesias, Goldstein, & Bedore), for ages 4;0 to 6;11. It has subtests given in both English and Spanish, plus parent and teacher questionnaires, and is designed to tell delays in English acquisition apart from true language disorders. Other Spanish speech tests include the Contextual Probes of Articulation Competence: Spanish (CPACS; Goldstein & Iglesias, 2006), the Bilingual Articulation Phonology Assessment: English/Spanish (BAPA; Fernandes, Kester, Bauman, & Prath, 2012), and the PLS-5 Spanish edition (Zimmerman, Steiner, & Pond, 2012)."
+    },
+    "sources": [
+      "Prath, S. (n.d.). Quick rules: Spanish phonology. Bilinguistics. https://bilinguistics.com/quick-rules-spanish-phonology/",
+      "McLeod, S., & Crowe, K. (2018). Children's consonant acquisition in 27 languages: A cross-linguistic review. American Journal of Speech-Language Pathology, 27(4), 1546-1571. https://doi.org/10.1044/2018_AJSLP-17-0100",
+      "Goldstein, B., Fabiano, L., & Washington, P. (2005). Phonological skills in predominantly English-speaking, predominantly Spanish-speaking, and Spanish-English bilingual children. Language, Speech, and Hearing Services in Schools, 36(3), 201-218. https://doi.org/10.1044/0161-1461(2005/021)",
+      "Peña, E. D., Gutiérrez-Clellen, V. F., Iglesias, A., Goldstein, B. A., & Bedore, L. M. Bilingual English-Spanish Assessment (BESA). Brookes Publishing. https://brookespublishing.com/wp-content/uploads/2021/06/BESA-at-a-glance.pdf",
+      "Charles Sturt University. (n.d.). Speech assessment tools. Multilingual Children's Speech. https://csu.edu.au/research/multilingual-speech/speech-assessments/speech-assessment-tools",
+      "California Department of Education. (n.d.). Facts about English learners in California. https://www.cde.ca.gov/ds/ad/cefelfacts.asp"
+    ]
+  },
   "Vietnamese": {
     "summary": "Tonal language with three major dialects. Many English sound errors from Vietnamese speakers reflect first-language influence, not a disorder.",
     "sections": {
@@ -13,7 +31,61 @@
       "Phạm, B., & McLeod, S. (2019). Vietnamese-speaking children's acquisition of consonants, semivowels, vowels, and tones in Northern Viet Nam. Journal of Speech, Language, and Hearing Research. https://doi.org/10.1044/2019_JSLHR-S-17-0405",
       "Pham, G., & Kohnert, K. (2014). A longitudinal study of lexical development in children learning Vietnamese and English. Child Development, 85(2), 767-782. https://doi.org/10.1111/cdev.12137",
       "Pham, G., & Tipton, T. (2018). Internal and external factors that support children's minority first language and English. Language, Speech, and Hearing Services in Schools. https://doi.org/10.1044/2018_LSHSS-17-0086",
-      "San Diego State University. (n.d.). Resources for Vietnamese speech and language assessments. https://bdc.sdsu.edu/links/resources-for-vietnamese-speech-and-language-assessments"
+      "San Diego State University. (n.d.). Resources for Vietnamese speech and language assessments. https://bdc.sdsu.edu/links/resources-for-vietnamese-speech-and-language-assessments",
+      "California Department of Education. (n.d.). Facts about English learners in California. https://www.cde.ca.gov/ds/ad/cefelfacts.asp"
+    ],
+    "california_share": 1.92
+  },
+  "Mandarin": {
+    "summary": "Tonal language. Children in Hua & Dodd (2000) acquired tones first and syllable-initial consonants last.",
+    "california_share": 1.83,
+    "sections": {
+      "Development": "In Hua and Dodd's study of Putonghua (Modern Standard Chinese), children acquired tones first, and tone errors were uncommon. Syllable-final consonants and vowels came next, and syllable-initial consonants came last. Initial consonant acquisition was complete by 3;6 for 75% of children. By 4;6, children produced initial consonants correctly about two-thirds of the time, except four affricates. Weak stress and the rhotacized feature were not fully acquired in the oldest children studied.",
+      "Across languages": "Across 27 languages, including Mandarin (Putonghua), most consonants were acquired by age 5;0, and by 5;0 children produced at least 93% of consonants correctly.",
+      "Ask the family": "Mandarin and Cantonese are different languages. When a family says the child speaks \"Chinese,\" ask which language, since development research and tests differ.",
+      "Assessment tools": "Putonghua Segmental Phonology Test (PSPT; So & Zhou, 2000). Picture-naming task for Putonghua (Hua, 2002). Mandarin Phonology Test with a Nonlinear Scan Analysis form (Zhao & Bernhardt, 2012)."
+    },
+    "sources": [
+      "Hua, Z., & Dodd, B. (2000). The phonological acquisition of Putonghua (Modern Standard Chinese). Journal of Child Language, 27(1), 3-42. https://doi.org/10.1017/S030500099900402X",
+      "McLeod, S., & Crowe, K. (2018). Children's consonant acquisition in 27 languages: A cross-linguistic review. American Journal of Speech-Language Pathology, 27(4), 1546-1571. https://doi.org/10.1044/2018_AJSLP-17-0100",
+      "Charles Sturt University. (n.d.). Speech assessment tools. Multilingual Children's Speech. https://csu.edu.au/research/multilingual-speech/speech-assessments/speech-assessment-tools",
+      "California Department of Education. (n.d.). Facts about English learners in California. https://www.cde.ca.gov/ds/ad/cefelfacts.asp"
+    ]
+  },
+  "Arabic": {
+    "summary": "Children speak a spoken dialect at home and learn Standard Arabic mainly at school. Ask which variety the child speaks and which one a test uses.",
+    "california_share": 1.43,
+    "sections": {
+      "Diglossia": "Arabic-speaking children grow up speaking Spoken Arabic for everyday talk at home and in the neighborhood. Standard Arabic is used for reading, writing, and formal settings like the classroom, so children first learn to read in a variety they do not speak. Tasks in Standard Arabic may measure the child's familiarity with that variety, not only the skill the task targets.",
+      "Development": "In a study of 180 Jordanian Arabic-speaking children aged 2;0 to 6;4, ages of consonant acquisition and mastery were similar to English, with notable exceptions. Medial consonants were more accurate than initial and final consonants. Across 27 languages, including Arabic, most consonants were acquired by age 5;0.",
+      "Dialects": "Arabic speech research comes from specific countries and dialects, including Jordanian, Egyptian, Kuwaiti, and Lebanese Arabic. Ask the family which dialect the child speaks, and match research and tests to that dialect when possible.",
+      "Assessment tools": "Mansoura Arabic Articulation Test (MAAT; Abou-Elsaad, Baz, & El-Banna, 2009), based on Egyptian Arabic. Kuwaiti Arabic Phonology Test (Ayyad, Bernhardt, & Stemberger, 2012). Amayreh Articulation Test (Amayreh & Dyson, 1998), based on Jordanian Arabic, and its modified version (Hamdan & Amayreh, 2007). Match the test to the child's dialect when possible."
+    },
+    "sources": [
+      "Schiff, R., & Saiegh-Haddad, E. (2018). Development and relationships between phonological awareness, morphological awareness and word reading in spoken and standard Arabic. Frontiers in Psychology, 9, 356. https://doi.org/10.3389/fpsyg.2018.00356",
+      "Amayreh, M. M., & Dyson, A. T. (1998). The acquisition of Arabic consonants. Journal of Speech, Language, and Hearing Research, 41(3), 642-653. https://doi.org/10.1044/jslhr.4103.642",
+      "McLeod, S., & Crowe, K. (2018). Children's consonant acquisition in 27 languages: A cross-linguistic review. American Journal of Speech-Language Pathology, 27(4), 1546-1571. https://doi.org/10.1044/2018_AJSLP-17-0100",
+      "Charles Sturt University. (n.d.). Speech acquisition studies. Multilingual Children's Speech. https://www.csu.edu.au/research/multilingual-speech/speech-acquisition/speech-acq-studies",
+      "Charles Sturt University. (n.d.). Speech assessment tools. Multilingual Children's Speech. https://csu.edu.au/research/multilingual-speech/speech-assessments/speech-assessment-tools",
+      "California Department of Education. (n.d.). Facts about English learners in California. https://www.cde.ca.gov/ds/ad/cefelfacts.asp"
+    ]
+  },
+  "Cantonese": {
+    "summary": "Tonal language. Children in So & Dodd (1995) mastered tones and vowels by age 2 and made few phonological errors after age 4.",
+    "california_share": 1.18,
+    "sections": {
+      "Development": "So and Dodd found that Cantonese-speaking children had mastered the contrastive use of tones and vowels by age 2. The order of consonant acquisition was similar to English. Developmental error patterns were also common in other languages, and some error patterns specific to Cantonese were identified. Few phonological errors occurred after age 4.",
+      "Across languages": "Across 27 languages, including Cantonese, most consonants were acquired by age 5;0, and by 5;0 children produced at least 93% of consonants correctly.",
+      "More research": "Cantonese tone development: Mok, Li, and Fung (2020). Cantonese consonant development: Wong and Stokes (2001).",
+      "Assessment tools": "Hong Kong Cantonese Articulation Test (HKCAT; Cheung, Ng, & To, 2006). Cantonese Segmental Phonology Test (So, 1993). Cantonese Phonological Assessment Guideline (So, 1992). Hong Kong Cantonese Tone Identification Test (Lee, 2010)."
+    },
+    "sources": [
+      "So, L. K. H., & Dodd, B. J. (1995). The acquisition of phonology by Cantonese-speaking children. Journal of Child Language, 22(3), 473-495. https://doi.org/10.1017/S0305000900009922",
+      "McLeod, S., & Crowe, K. (2018). Children's consonant acquisition in 27 languages: A cross-linguistic review. American Journal of Speech-Language Pathology, 27(4), 1546-1571. https://doi.org/10.1044/2018_AJSLP-17-0100",
+      "Mok, P. P. K., Li, V. G., & Fung, H. S. H. (2020). Development of phonetic contrasts in Cantonese tone acquisition. Journal of Speech, Language, and Hearing Research, 63(1), 95-108. https://doi.org/10.1044/2019_JSLHR-19-00152",
+      "Wong, W., & Stokes, S. F. (2001). Cantonese consonantal development: Towards a nonlinear account. Journal of Child Language, 28(1), 195-212. https://doi.org/10.1017/S0305000900004645",
+      "Charles Sturt University. (n.d.). Speech assessment tools. Multilingual Children's Speech. https://csu.edu.au/research/multilingual-speech/speech-assessments/speech-assessment-tools",
+      "California Department of Education. (n.d.). Facts about English learners in California. https://www.cde.ca.gov/ds/ad/cefelfacts.asp"
     ]
   }
 }

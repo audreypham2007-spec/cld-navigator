@@ -1,9 +1,11 @@
-# .streamlit/config.toml - the colors and fonts for the whole site
+# .streamlit/config.toml - the colors and fonts for the whole site.
+# Teal always means "hears". Gold always means "speaks".
 
 [theme]
 base = "light"
-primaryColor = "#1F6F78"            # teal: buttons, sliders, links
-backgroundColor = "#FBFAF7"         # warm off-white page
-secondaryBackgroundColor = "#EEF3F2" # sidebar and boxes
-textColor = "#1E2A2E"
-font = "sans serif"
+primaryColor = "#0E4F57"             # dark teal: buttons, links, "hears"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F2F5F5"  # input boxes and panels
+textColor = "#1C2B33"                 # deep slate
+# Lexend: one friendly, highly readable font family for the whole site.
+font = "Lexend:https://fonts.googleapis.com/css2?family=Lexend:wght@300..700&display=swap, sans-serif"
