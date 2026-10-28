@@ -3,9 +3,11 @@
 
 [theme]
 base = "light"
-primaryColor = "#0E4F57"             # dark teal: buttons, links, "hears"
+primaryColor = "#0E4F57"             # dark teal: links, sliders, "hears"
 backgroundColor = "#FFFFFF"
 secondaryBackgroundColor = "#F2F5F5"  # input boxes and panels
-textColor = "#1C2B33"                 # deep slate
-# Lexend: one friendly, highly readable font family for the whole site.
-font = "Lexend:https://fonts.googleapis.com/css2?family=Lexend:wght@300..700&display=swap, sans-serif"
+textColor = "#13303A"                 # deep teal ink
+baseRadius = "10px"
+# Be Vietnam Pro: drawn by Vietnamese type designers, so every Vietnamese
+# diacritic sits right. One family for the whole site.
+font = "Be Vietnam Pro:https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap, sans-serif"

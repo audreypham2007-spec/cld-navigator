@@ -247,4 +247,31 @@ GLOSSARY = {
     "Phonemic inventory": "The set of speech sounds a language uses to tell words apart.",
     "Tone": "A change in pitch that changes a word's meaning. Vietnamese uses tones. "
             "English does not.",
+    "Code-mixing": "Using words or grammar from two languages in one sentence. In young "
+                   "bilingual children, code-mixing reflects knowledge of both grammars, "
+                   "not confusion (Genesee, 2009).",
+    "Diglossia": "Two varieties of one language used for different purposes, like Spoken "
+                 "Arabic at home and Standard Arabic at school.",
+    "Place of articulation": "Where in the mouth a sound is made, such as the lips, the "
+                             "gum ridge, or the soft palate.",
+    "Age notation": "Speech research writes ages as years;months. 3;6 means 3 years, "
+                    "6 months.",
+}
+
+
+# Session phrases for SLPs, by language. (Vietnamese, English)
+# Draft wording: not yet reviewed by a native speaker. See REVIEW_STATUS in views.py.
+PHRASES = {
+    "Vietnamese": [
+        ("Xin chào", "Hello"),
+        ("Con tên gì?", "What's your name? (to a child)"),
+        ("Nhìn nè.", "Look."),
+        ("Chỉ cho cô cái ___.", "Show me the ___."),
+        ("Nói theo cô: ___.", "Say after me: ___."),
+        ("Giỏi lắm!", "Great job!"),
+        ("Thử lại nhé.", "Let's try again."),
+        ("Mình nghỉ một chút nhé.", "Let's take a short break."),
+        ("Xong rồi!", "All done!"),
+        ("Cảm ơn con.", "Thank you. (to a child)"),
+    ],
 }

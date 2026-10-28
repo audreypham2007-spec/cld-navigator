@@ -2,8 +2,11 @@
 # These NEVER diagnose. Every rule lists where it comes from, so the SLP
 # can judge how much weight to give it.
 
-LOW_EXPOSURE = 20  # percent. TODO: confirm this cutoff in research and cite it
-BIG_GAP = 30       # percent. TODO: confirm and cite
+# Display thresholds set by this site. The research below backs the reasoning behind
+# each check, not these exact numbers, and the About page says so.
+LOW_EXPOSURE = 20  # percent
+BIG_GAP = 30       # percentage points
+TODDLER_MONTHS = 36
 VIETNAMESE_AGE_CUTOFF = 72  # months (age 6). From Phạm & McLeod (2019)
 
 CITATION_PENDING = "Placeholder rule. Research citation in progress."
@@ -16,6 +19,18 @@ GOLDSTEIN = ("Goldstein, B., Fabiano, L., & Washington, P. (2005). Language, Spe
 SCHIFF = "Schiff, R., & Saiegh-Haddad, E. (2018). Frontiers in Psychology."
 SO_DODD = "So, L. K. H., & Dodd, B. J. (1995). Journal of Child Language."
 HUA_DODD = "Hua, Z., & Dodd, B. (2000). Journal of Child Language."
+PEARSON_1997 = ("Pearson, B. Z., Fernández, S. C., Lewedeg, V., & Oller, D. K. (1997). "
+                "Applied Psycholinguistics.")
+PEARSON_1993 = ("Pearson, B. Z., Fernández, S. C., & Oller, D. K. (1993). Language "
+                "Learning.")
+GIBSON = ("Gibson, T. A., Oller, D. K., Jarmulowicz, L., & Ethington, C. A. (2012). "
+          "Bilingualism: Language and Cognition.")
+PENA = ("Peña, E., Iglesias, A., & Lidz, C. S. (2001). American Journal of "
+        "Speech-Language Pathology.")
+SITE_CUTOFF = " The {n} cutoff is set by this site, not by the study."
+
+
+from sounds import ALIASES
 
 
 def is_lang(name, *words):
@@ -91,6 +106,17 @@ def get_considerations(case, library_languages=()):
             "Standard Arabic mainly at school. Ask which dialect the child speaks, "
             "and check which variety a test uses.", "language", SCHIFF))
 
+    from sounds import ENGLISH_CONSONANTS, SOUND_GAPS, short_cite
+    order = [i for grp in ENGLISH_CONSONANTS.values() for i, _, _ in grp]
+    for lang_name in ("Arabic", "Cantonese", "Farsi", "Filipino", "Punjabi"):
+        if any(ALIASES.get(n.strip().lower(), n).lower() == lang_name.lower()
+               for n in names) and any(is_english(n) for n in names):
+            data = SOUND_GAPS[lang_name]
+            sounds = " ".join(i for i in order if i in data["missing"])
+            tips.append(tip(f"English consonants {lang_name} doesn't use include /{sounds}/. "
+                            "Errors on these in English may reflect the home language. See "
+                            "the Sound Explorer.", "language", short_cite(data["sources"][0])))
+
     if any(is_lang(n, "chinese") for n in names):
         tips.append(tip(
             "\"Chinese\" covers several languages, including Mandarin and Cantonese. "
@@ -112,9 +138,10 @@ def get_considerations(case, library_languages=()):
 
     library_lower = {name.lower() for name in library_languages}
     for name in names:
-        if name.lower() in library_lower:
-            tips.append(tip(f"The Knowledge Library has research notes and assessment "
-                            f"tools for {name}.", "language"))
+        if ALIASES.get(name.strip().lower(), name).lower() in library_lower:
+            tips.append(tip(f"The Knowledge Library has research notes for {name}, and the "
+                            "Sound Explorer shows how its sounds compare with English.",
+                            "language"))
 
     # --- Exposure checks ---
     if len(case.languages) == 1:
@@ -125,19 +152,32 @@ def get_considerations(case, library_languages=()):
         hears = lang.percent_hears or 0
         speaks = lang.percent_speaks or 0
         if hears < LOW_EXPOSURE:
-            tips.append(tip(f"The child hears {lang.name} only {hears}% of the time. "
-                            f"Lower skills in {lang.name} may reflect limited "
-                            "exposure, not a disorder.", "exposure", CITATION_PENDING))
+            tips.append(tip(f"The child hears {lang.name} only {hears}% of the time. In "
+                            "bilingual toddlers, vocabulary in each language closely "
+                            "tracked how much input the child had in it, so lower skills "
+                            f"in {lang.name} may reflect limited exposure, not a disorder."
+                            + SITE_CUTOFF.format(n=f"{LOW_EXPOSURE}%"),
+                            "exposure", PEARSON_1997))
         if hears - speaks >= BIG_GAP:
-            tips.append(tip(f"The child hears {lang.name} much more than they speak "
-                            "it. Consider testing understanding separately from "
-                            "speaking.", "exposure", CITATION_PENDING))
+            tips.append(tip(f"The child hears {lang.name} much more than they speak it. "
+                            "Young second-language learners often understand more words "
+                            "than they say, so test understanding separately from speaking."
+                            + SITE_CUTOFF.format(n=f"{BIG_GAP}-point"),
+                            "exposure", GIBSON))
+    if len(case.languages) > 1 and case.age_months < TODDLER_MONTHS:
+        tips.append(tip("For a young bilingual child, count words in both languages. "
+                        "Bilingual toddlers kept pace with monolingual peers when both "
+                        "languages were counted.", "exposure", PEARSON_1993))
 
     # --- General reminders ---
     tips.append(tip("Compare the child to bilingual peers from the same community, "
                     "not to monolingual norms.", "general"))
     tips.append(tip("A true language disorder usually shows up in all of a child's "
                     "languages. Gather information on each one.", "general"))
+    tips.append(tip("Consider dynamic assessment. In a test-teach-retest word-learning "
+                    "task, how much a child learned told typical learners apart from "
+                    "children with low language ability better than a one-time score.",
+                    "general", PENA))
     return tips
 
 
@@ -167,16 +207,28 @@ RULE_TABLE = [
     {"Rule": "Ask which Chinese language",
      "When it shows": "\"Chinese\" entered",
      "Source": "Reminder to complete the language history."},
+    {"Rule": "English sounds not in Arabic, Cantonese, Farsi, Filipino, or Punjabi",
+     "When it shows": "That language and English both entered",
+     "Source": "Bilinguistics; MultiCSD (see the Sound Explorer)"},
     {"Rule": "Limited exposure",
-     "When it shows": f"Child hears a language less than {LOW_EXPOSURE}% of the time",
-     "Source": CITATION_PENDING},
+     "When it shows": f"Child hears a language less than {LOW_EXPOSURE}% of the time "
+                      "(cutoff set by this site)",
+     "Source": PEARSON_1997},
     {"Rule": "Hears much more than speaks",
-     "When it shows": f"Hears minus speaks is {BIG_GAP} points or more",
-     "Source": CITATION_PENDING},
+     "When it shows": f"Hears minus speaks is {BIG_GAP} points or more (cutoff set by "
+                      "this site)",
+     "Source": GIBSON},
+    {"Rule": "Count words in both languages",
+     "When it shows": f"Two or more languages and child under {TODDLER_MONTHS} months",
+     "Source": PEARSON_1993},
+    {"Rule": "Consider dynamic assessment",
+     "When it shows": "Every case",
+     "Source": PENA},
     {"Rule": "Only one language entered",
      "When it shows": "One language on the case",
      "Source": "Reminder to complete the language history."},
     {"Rule": "Compare to bilingual peers; check every language",
      "When it shows": "Every case",
-     "Source": "General reminder. Citation in progress."},
+     "Source": "General reminder from standard bilingual assessment practice. "
+               "Citation in progress."},
 ]

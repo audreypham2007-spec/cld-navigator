@@ -3,17 +3,17 @@
     "summary": "The most common home language of California English learners. Many English errors, like dropped final consonants, can reflect Spanish influence rather than a disorder.",
     "california_share": 81.9,
     "sections": {
-      "Sounds": "Spanish has five vowel phonemes (/a e i o u/), while English has many more vowels, including many diphthongs, so English vowel pairs like \"seat\" and \"sit\" can be hard to tell apart. Spanish uses only five word-final consonants (/s, n, r, l, d/), so dropping final consonants or simplifying final clusters in English may reflect Spanish influence rather than a disorder. Spanish lacks or treats differently some English sounds, such as the \"th\" sounds and the \"sh\" versus \"ch\" contrast.",
+      "Sounds": "Spanish has five vowel phonemes (/a e i o u/), while English has many more vowels, including many diphthongs, so English vowel pairs like \"seat\" and \"sit\" can be hard to tell apart. Spanish uses only five word-final consonants (/s, n, r, l, d/), so dropping final consonants or simplifying final clusters in English may reflect Spanish influence rather than a disorder. Spanish lacks or treats differently some English sounds, such as the \"th\" sounds and the \"sh\" versus \"ch\" contrast. ASHA lists these English sounds as not in Spanish: /ŋ v ð θ z ʃ ʒ h dʒ ɹ/. Dialects of Spanish vary.",
       "Development": "Across 27 languages, including Spanish, most consonants were acquired by age 5;0, and by 5;0 children produced at least 93% of consonants correctly. Plosives and nasals were acquired earlier than trills and flaps, so the Spanish trill may still be developing in young children.",
       "Language": "In a study of 5-year-olds, Spanish-English bilingual children did not differ significantly from monolingual Spanish or English peers in segmental accuracy, syllabic accuracy, or phonological patterns, and cross-linguistic effects were limited. How much the child used each language did not predict phonological skills, so assess phonology directly in both languages. The sample was small (15 children).",
-      "Assessment tools": "Bilingual English-Spanish Assessment (BESA; Peña, Gutiérrez-Clellen, Iglesias, Goldstein, & Bedore), for ages 4;0 to 6;11. It has subtests given in both English and Spanish, plus parent and teacher questionnaires, and is designed to tell delays in English acquisition apart from true language disorders. Other Spanish speech tests include the Contextual Probes of Articulation Competence: Spanish (CPACS; Goldstein & Iglesias, 2006), the Bilingual Articulation Phonology Assessment: English/Spanish (BAPA; Fernandes, Kester, Bauman, & Prath, 2012), and the PLS-5 Spanish edition (Zimmerman, Steiner, & Pond, 2012)."
+      "Assessment tools": "Bilingual English-Spanish Assessment (BESA; Peña, Gutiérrez-Clellen, Iglesias, Goldstein, & Bedore), for ages 4;0 to 6;11. It has subtests given in both English and Spanish, plus parent and teacher questionnaires, and is designed to tell delays in English acquisition apart from true language disorders."
     },
     "sources": [
       "Prath, S. (n.d.). Quick rules: Spanish phonology. Bilinguistics. https://bilinguistics.com/quick-rules-spanish-phonology/",
+      "American Speech-Language-Hearing Association. (n.d.). Spanish phonemic inventory. https://www.asha.org/practice/multicultural/phono/",
       "McLeod, S., & Crowe, K. (2018). Children's consonant acquisition in 27 languages: A cross-linguistic review. American Journal of Speech-Language Pathology, 27(4), 1546-1571. https://doi.org/10.1044/2018_AJSLP-17-0100",
       "Goldstein, B., Fabiano, L., & Washington, P. (2005). Phonological skills in predominantly English-speaking, predominantly Spanish-speaking, and Spanish-English bilingual children. Language, Speech, and Hearing Services in Schools, 36(3), 201-218. https://doi.org/10.1044/0161-1461(2005/021)",
       "Peña, E. D., Gutiérrez-Clellen, V. F., Iglesias, A., Goldstein, B. A., & Bedore, L. M. Bilingual English-Spanish Assessment (BESA). Brookes Publishing. https://brookespublishing.com/wp-content/uploads/2021/06/BESA-at-a-glance.pdf",
-      "Charles Sturt University. (n.d.). Speech assessment tools. Multilingual Children's Speech. https://csu.edu.au/research/multilingual-speech/speech-assessments/speech-assessment-tools",
       "California Department of Education. (n.d.). Facts about English learners in California. https://www.cde.ca.gov/ds/ad/cefelfacts.asp"
     ]
   },
@@ -22,7 +22,7 @@
     "sections": {
       "Sounds": "Vietnamese is a tonal language (6 tones are used in Viet Nam); English has no tones. There are three major dialects (Northern, Central, Southern) with different consonants, vowels, and tones, so ask the family which dialect the child speaks. English consonants not found in standard Vietnamese include /ɡ θ ð ʃ ʒ tʃ dʒ ɹ/ (sources differ slightly on /ɡ ʃ ʒ/, likely due to dialect), so errors on these in English may reflect first-language influence rather than a speech disorder.",
       "Development": "Northern Vietnamese-speaking children had acquired nearly all Vietnamese sounds and tones by about age 5;5 to 5;11. Exceptions were initial /ɲ, s, z, x/, the semivowel /w/ within syllables, and tones 3 (ngã) and 4 (hỏi), so errors on these may still be typical before age 6. This study covered the Northern dialect only.",
-      "Language": "In a 4-year study of school-age Vietnamese-English children in the US, both languages grew, but English grew faster, so many children shifted toward English dominance, and receptive and expressive skills followed different patterns. Lower Vietnamese skills compared to English may reflect this shift, not a disorder. Parents' use of Vietnamese supported children's Vietnamese vocabulary and did not slow their English vocabulary.",
+      "Language": "In a 4-year study of school-age Vietnamese-English children in the US, both languages grew, but English grew faster, so many children shifted toward English dominance, and receptive and expressive skills followed different patterns. Lower Vietnamese skills compared to English may reflect this shift, not a disorder. Parents' use of Vietnamese contributed to children's Vietnamese vocabulary and was not related to their English vocabulary (Pham & Tipton, 2018).",
       "Assessment tools": "Vietnamese Speech Assessment (Phạm, Le, & McLeod, 2016); Multilingual Assessment Instrument for Narratives (MAIN), Vietnamese version; Intelligibility in Context Scale (ICS), Vietnamese version."
     },
     "sources": [
@@ -42,13 +42,11 @@
     "sections": {
       "Development": "In Hua and Dodd's study of Putonghua (Modern Standard Chinese), children acquired tones first, and tone errors were uncommon. Syllable-final consonants and vowels came next, and syllable-initial consonants came last. Initial consonant acquisition was complete by 3;6 for 75% of children. By 4;6, children produced initial consonants correctly about two-thirds of the time, except four affricates. Weak stress and the rhotacized feature were not fully acquired in the oldest children studied.",
       "Across languages": "Across 27 languages, including Mandarin (Putonghua), most consonants were acquired by age 5;0, and by 5;0 children produced at least 93% of consonants correctly.",
-      "Ask the family": "Mandarin and Cantonese are different languages. When a family says the child speaks \"Chinese,\" ask which language, since development research and tests differ.",
-      "Assessment tools": "Putonghua Segmental Phonology Test (PSPT; So & Zhou, 2000). Picture-naming task for Putonghua (Hua, 2002). Mandarin Phonology Test with a Nonlinear Scan Analysis form (Zhao & Bernhardt, 2012)."
+      "Ask the family": "Mandarin and Cantonese are different languages. When a family says the child speaks \"Chinese,\" ask which language, since development research and tests differ."
     },
     "sources": [
       "Hua, Z., & Dodd, B. (2000). The phonological acquisition of Putonghua (Modern Standard Chinese). Journal of Child Language, 27(1), 3-42. https://doi.org/10.1017/S030500099900402X",
       "McLeod, S., & Crowe, K. (2018). Children's consonant acquisition in 27 languages: A cross-linguistic review. American Journal of Speech-Language Pathology, 27(4), 1546-1571. https://doi.org/10.1044/2018_AJSLP-17-0100",
-      "Charles Sturt University. (n.d.). Speech assessment tools. Multilingual Children's Speech. https://csu.edu.au/research/multilingual-speech/speech-assessments/speech-assessment-tools",
       "California Department of Education. (n.d.). Facts about English learners in California. https://www.cde.ca.gov/ds/ad/cefelfacts.asp"
     ]
   },
@@ -58,15 +56,13 @@
     "sections": {
       "Diglossia": "Arabic-speaking children grow up speaking Spoken Arabic for everyday talk at home and in the neighborhood. Standard Arabic is used for reading, writing, and formal settings like the classroom, so children first learn to read in a variety they do not speak. Tasks in Standard Arabic may measure the child's familiarity with that variety, not only the skill the task targets.",
       "Development": "In a study of 180 Jordanian Arabic-speaking children aged 2;0 to 6;4, ages of consonant acquisition and mastery were similar to English, with notable exceptions. Medial consonants were more accurate than initial and final consonants. Across 27 languages, including Arabic, most consonants were acquired by age 5;0.",
-      "Dialects": "Arabic speech research comes from specific countries and dialects, including Jordanian, Egyptian, Kuwaiti, and Lebanese Arabic. Ask the family which dialect the child speaks, and match research and tests to that dialect when possible.",
-      "Assessment tools": "Mansoura Arabic Articulation Test (MAAT; Abou-Elsaad, Baz, & El-Banna, 2009), based on Egyptian Arabic. Kuwaiti Arabic Phonology Test (Ayyad, Bernhardt, & Stemberger, 2012). Amayreh Articulation Test (Amayreh & Dyson, 1998), based on Jordanian Arabic, and its modified version (Hamdan & Amayreh, 2007). Match the test to the child's dialect when possible."
+      "Dialects": "Arabic speech research comes from specific countries and dialects, including Jordanian, Egyptian, Kuwaiti, and Lebanese Arabic. Ask the family which dialect the child speaks, and match research and tests to that dialect when possible."
     },
     "sources": [
       "Schiff, R., & Saiegh-Haddad, E. (2018). Development and relationships between phonological awareness, morphological awareness and word reading in spoken and standard Arabic. Frontiers in Psychology, 9, 356. https://doi.org/10.3389/fpsyg.2018.00356",
       "Amayreh, M. M., & Dyson, A. T. (1998). The acquisition of Arabic consonants. Journal of Speech, Language, and Hearing Research, 41(3), 642-653. https://doi.org/10.1044/jslhr.4103.642",
       "McLeod, S., & Crowe, K. (2018). Children's consonant acquisition in 27 languages: A cross-linguistic review. American Journal of Speech-Language Pathology, 27(4), 1546-1571. https://doi.org/10.1044/2018_AJSLP-17-0100",
       "Charles Sturt University. (n.d.). Speech acquisition studies. Multilingual Children's Speech. https://www.csu.edu.au/research/multilingual-speech/speech-acquisition/speech-acq-studies",
-      "Charles Sturt University. (n.d.). Speech assessment tools. Multilingual Children's Speech. https://csu.edu.au/research/multilingual-speech/speech-assessments/speech-assessment-tools",
       "California Department of Education. (n.d.). Facts about English learners in California. https://www.cde.ca.gov/ds/ad/cefelfacts.asp"
     ]
   },
@@ -76,15 +72,78 @@
     "sections": {
       "Development": "So and Dodd found that Cantonese-speaking children had mastered the contrastive use of tones and vowels by age 2. The order of consonant acquisition was similar to English. Developmental error patterns were also common in other languages, and some error patterns specific to Cantonese were identified. Few phonological errors occurred after age 4.",
       "Across languages": "Across 27 languages, including Cantonese, most consonants were acquired by age 5;0, and by 5;0 children produced at least 93% of consonants correctly.",
-      "More research": "Cantonese tone development: Mok, Li, and Fung (2020). Cantonese consonant development: Wong and Stokes (2001).",
-      "Assessment tools": "Hong Kong Cantonese Articulation Test (HKCAT; Cheung, Ng, & To, 2006). Cantonese Segmental Phonology Test (So, 1993). Cantonese Phonological Assessment Guideline (So, 1992). Hong Kong Cantonese Tone Identification Test (Lee, 2010)."
+      "More research": "Cantonese tone development: Mok, Li, and Fung (2020). Cantonese consonant development: Wong and Stokes (2001)."
     },
     "sources": [
       "So, L. K. H., & Dodd, B. J. (1995). The acquisition of phonology by Cantonese-speaking children. Journal of Child Language, 22(3), 473-495. https://doi.org/10.1017/S0305000900009922",
       "McLeod, S., & Crowe, K. (2018). Children's consonant acquisition in 27 languages: A cross-linguistic review. American Journal of Speech-Language Pathology, 27(4), 1546-1571. https://doi.org/10.1044/2018_AJSLP-17-0100",
       "Mok, P. P. K., Li, V. G., & Fung, H. S. H. (2020). Development of phonetic contrasts in Cantonese tone acquisition. Journal of Speech, Language, and Hearing Research, 63(1), 95-108. https://doi.org/10.1044/2019_JSLHR-19-00152",
       "Wong, W., & Stokes, S. F. (2001). Cantonese consonantal development: Towards a nonlinear account. Journal of Child Language, 28(1), 195-212. https://doi.org/10.1017/S0305000900004645",
-      "Charles Sturt University. (n.d.). Speech assessment tools. Multilingual Children's Speech. https://csu.edu.au/research/multilingual-speech/speech-assessments/speech-assessment-tools",
+      "California Department of Education. (n.d.). Facts about English learners in California. https://www.cde.ca.gov/ds/ad/cefelfacts.asp"
+    ]
+  },
+  "Russian": {
+    "california_share": 0.97,
+    "summary": "Starter note. Russian has no articles and no present-tense form of “to be,” so English learners may leave these out.",
+    "sections": {
+      "Sounds": "Voiceless “th” (as in think) exists in English but not in Russian. Russian allows clusters of up to four consonants and does not allow the “ng” sound at the end of a word.",
+      "Grammar": "Russian has no articles, so English articles are often left out. Russian has no copula, so learners may drop is, am, or are, as in “He teacher.” Russian verbs focus on aspect, whether an action is completed, more than on tense. Subject-verb-object order and adjectives before nouns are shared with English.",
+      "Coming next": "A full consonant comparison and development research for Russian are coming next."
+    },
+    "sources": [
+      "Bilinguistics. (2013). The influence of a first language on English acquisition: A look at Spanish, Russian, and Vietnamese [Presentation slides]. https://bilinguistics.com/wp-content/uploads/2013/12/Are-His-Errors-Russian-Vietnamese-Spanish.pdf",
+      "California Department of Education. (n.d.). Facts about English learners in California. https://www.cde.ca.gov/ds/ad/cefelfacts.asp"
+    ]
+  },
+  "Farsi": {
+    "california_share": 0.93,
+    "summary": "Starter note. The English sounds /w/, /ð/, /θ/, and /ŋ/ do not occur in Farsi, so these may be harder for Farsi speakers.",
+    "sections": {
+      "Sounds": "The English phonemes /w/, /ð/, /θ/, and /ŋ/ do not occur in Farsi. Farsi word stress usually falls on the last stem syllable, so English learners may stress the last syllable of some English words.",
+      "Grammar": "Farsi uses subject-object-verb order. A bilingual child's object-before-verb order in English may be an overgeneralization from Farsi.",
+      "Further reading": "An ASHA Perspectives tutorial covers assessment of Farsi-English emerging bilingual children (2023)."
+    },
+    "sources": [
+      "Gildersleeve-Neumann, C., Wahlstrom, A., & Morandi, M. (2022). Farsi (Persian). MultiCSD. https://sites.google.com/view/multicsd/global-languages/farsi-persian",
+      "Assessment in Farsi-English emerging bilingual children: A tutorial. (2023). Perspectives of the ASHA Special Interest Groups. https://doi.org/10.1044/2023_PERSP-23-00094",
+      "California Department of Education. (n.d.). Facts about English learners in California. https://www.cde.ca.gov/ds/ad/cefelfacts.asp"
+    ]
+  },
+  "Filipino": {
+    "california_share": 0.9,
+    "summary": "Starter note. Filipino (Tagalog) doesn't use English /f/ or /v/, so “vase” may sound like “base.”",
+    "sections": {
+      "Sounds": "English consonants not shared with Tagalog/Filipino include /f v z ʒ θ ð ɹ/. The sounds /ʃ tʃ dʒ/ are used only in some dialects or in loanwords, and /t/ and /d/ are made at the teeth. English /v/ may be said as /b/ (vase, base), and both “th” sounds as /t/ or /d/ (math, mat; that, dat).",
+      "Clusters and stress": "Tagalog doesn't start words with consonant clusters except in borrowed words, so English clusters may be reduced (plank, pank). Stress can change meaning in Tagalog and falls on one of the last two syllables, so English stress may shift (BUTterfly, butterFLY).",
+      "Ask the family": "The California Department of Education reports this language as Filipino (Pilipino or Tagalog). Ask which language and dialect the family speaks."
+    },
+    "sources": [
+      "Bilinguistics. (n.d.). Filipino - Tagalog speech and language development. https://bilinguistics.com/languages/filipino-tagalog-speech-and-language-development/",
+      "California Department of Education. (n.d.). Facts about English learners in California. https://www.cde.ca.gov/ds/ad/cefelfacts.asp"
+    ]
+  },
+  "Punjabi": {
+    "california_share": 0.84,
+    "summary": "Starter note. Punjabi puts the verb at the end of the sentence and has no articles, and both can show up in a child's English.",
+    "sections": {
+      "Sounds": "English /ʒ θ ð ɹ w/ are absent from Punjabi's core sound system. /v/ appears only in some Punjabi dialects or in loanwords.",
+      "Grammar": "Punjabi uses subject-object-verb order, postpositions after the noun instead of prepositions, and no articles. Subjects are often dropped, “to be” is often left out, and question words don't trigger inversion. Each pattern can carry into English while a child is learning it."
+    },
+    "sources": [
+      "Bilinguistics. (n.d.). Punjabi speech and language development. https://bilinguistics.com/languages/punjabi-speech-and-language-development/",
+      "California Department of Education. (n.d.). Facts about English learners in California. https://www.cde.ca.gov/ds/ad/cefelfacts.asp"
+    ]
+  },
+  "Korean": {
+    "california_share": 0.67,
+    "summary": "Starter note. Korean consonants at the ends of words are unreleased, and Korean puts the verb last.",
+    "sections": {
+      "Sounds": "All Korean plosives, affricates, and fricatives are unreleased at the end of a word. Korean /l/ becomes a flap between vowels, and /p, t, k/ become voiced between voiced sounds.",
+      "Grammar": "Korean uses subject-object-verb order with subject and object markers, often drops the understood subject, and changes verb endings by social relationship.",
+      "Coming next": "A full consonant comparison and development research for Korean are coming next."
+    },
+    "sources": [
+      "Gildersleeve-Neumann, C. (n.d.). Korean. MultiCSD. https://sites.google.com/view/multicsd/global-languages/korean",
       "California Department of Education. (n.d.). Facts about English learners in California. https://www.cde.ca.gov/ds/ad/cefelfacts.asp"
     ]
   }

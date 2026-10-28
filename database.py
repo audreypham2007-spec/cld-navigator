@@ -40,6 +40,20 @@ class Language(Base):
     case: Mapped[Case] = relationship(back_populates="languages")
 
 
+# Table 3: feedback from SLPs, professors, and students (no child information)
+class Feedback(Base):
+    __tablename__ = "feedback"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    created_at: Mapped[datetime] = mapped_column(default=datetime.now)
+    role: Mapped[str]
+    languages_served: Mapped[str | None] = mapped_column(Text)
+    tried: Mapped[str | None] = mapped_column(Text)
+    usefulness: Mapped[int]
+    would_use: Mapped[str]
+    wrong: Mapped[str | None] = mapped_column(Text)
+    missing: Mapped[str | None] = mapped_column(Text)
+
+
 # Create the tables if they don't exist yet
 Base.metadata.create_all(engine)
 
