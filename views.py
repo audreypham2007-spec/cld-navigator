@@ -13,11 +13,11 @@ from content import (GLOSSARY, INTERVIEW_LABELS, INTERVIEW_LANGUAGES, PHRASES, R
 from art import (BUBBLES_SVG, CHILD_SVG, HELLO_SVG, PAGE_ART, PERSONA_SVGS, SESSION_SVG, donut,
                  icon, tone_chart, waffle)
 from database import Case, Feedback, Language, Session
-from report import (case_report_html, family_handout_html, interview_html,
+from report import (case_report_html, error_check_html, family_handout_html, interview_html,
                     project_summary_html, sound_sheet_html)
 from rules import RULE_TABLE, check_percentages, get_considerations
 from sample_data import load_demo_cases
-from sounds import (ASHA_INTERPRETERS, GENESEE, PENA as PENA_FULL, PARADIS, PEARSON, PHAM_TIPTON, ALIASES, ENGLISH_CONSONANTS, FACTS, MANDARIN_READING, MILESTONES, PAIRS,
+from sounds import (PATTERNS, classify_errors, ASHA_INTERPRETERS, GENESEE, PENA as PENA_FULL, PARADIS, PEARSON, PHAM_TIPTON, ALIASES, ENGLISH_CONSONANTS, FACTS, MANDARIN_READING, MILESTONES, PAIRS,
                     PENDING_SOURCES, PLACES, MYTHS, SCHIFF_FULL, SOUND_GAPS,
                     SOUND_PENDING, TONES, TOTAL_CONSONANTS, short_cite)
 
@@ -74,9 +74,9 @@ STEPS = [
     ("Look up the home language",
      "The Knowledge Library and Sound Explorer show what's typical in the child's "
      "home language and which English sounds it doesn't use."),
-    ("Run a quick check",
-     "Enter the child's languages and age. Get cited things to consider, with nothing "
-     "stored unless you choose to save a practice case."),
+    ("Check the child's errors",
+     "Enter the English sounds and patterns the child finds hard. See which ones the "
+     "home language explains and which deserve a closer look. Nothing is saved."),
     ("Bring in the family",
      "Print the family interview in six languages, plan with an interpreter, and share "
      "a plain-language handout on raising a bilingual child."),
@@ -170,15 +170,15 @@ def home():
     with left:
         st.markdown("""
 <div class="home-title">Is it a language difference, or a disorder?</div>
-<p class="home-lede">A free reference for SLPs working with bilingual children: research
-on 10 home languages, side-by-side sound comparisons, and family resources. Every claim
-cites its source.</p>
+<p class="home-lede">Enter the English sounds a bilingual child finds hard. CLD Navigator
+checks each one against the child's home language and shows which ones it explains and
+which deserve a closer look, with a source for every call.</p>
 """, unsafe_allow_html=True)
         b1, b2 = st.columns(2)
-        if b1.button("Open the Sound Explorer", type="primary", width="stretch"):
+        if b1.button("Check a child's errors", type="primary", width="stretch"):
+            st.switch_page(PAGES["errors"])
+        if b2.button("Open the Sound Explorer", width="stretch"):
             st.switch_page(PAGES["sounds"])
-        if b2.button("Run a quick check", width="stretch"):
-            st.switch_page(PAGES["assess"])
         st.markdown(f"""
 <div class="facts"><span>Free, no account</span><span>{len(library)} languages</span>
 <span>{sources} cited sources</span><span>{coverage:.0f}% of CA English learners</span></div>""", unsafe_allow_html=True)
@@ -1133,7 +1133,8 @@ TOOLS = [
      "sound-explorer"),
     ("library", "Knowledge Library", "Research on each home language, with sources.",
      "knowledge-library"),
-    ("insights", "Insights", "Spot patterns across every saved case.", "insights"),
+    ("about", "Error Check", "Sort a child's English errors into what the home language "
+     "explains and what deserves a closer look.", "error-check"),
     ("refs", "References", "Every source in one list, plus how to cite the tool.",
      "references"),
 ]
@@ -1297,6 +1298,108 @@ diagnose, and the SLP makes every clinical decision.</p></div>""", unsafe_allow_
         for source in all_sources:
             st.markdown(f"- {source}")
     across_languages(picked)
+
+
+# ---------------------------------------------------------------- Error Check
+def error_check():
+    page_header("Error Check", "Enter the English sounds and patterns a child finds hard. "
+                "See which ones the home language explains, and which deserve a closer "
+                "look. Every call cites its source.", "mint", PAGE_ART["about"],
+                ["Nothing is saved", f"{len(SOUND_GAPS)} sound comparisons",
+                 f"{len(PATTERNS)} error patterns"])
+    st.markdown(f'<div class="privacy">{icon("shield", 40)}<div><b>Nothing is saved.</b> '
+                'This page asks only about sounds and patterns, never about who the child '
+                'is. It supports clinical judgment and does not diagnose.</div></div>',
+                unsafe_allow_html=True)
+
+    languages = [n for n in load_library()]
+    chunk(1, "Home language", "mint")
+    lang = st.pills("Home language", languages, default=languages[0],
+                                key="ec_lang", label_visibility="collapsed",
+                                format_func=lambda n: f"{n} ({AUTONYMS[n]})"
+                                if n in AUTONYMS and AUTONYMS[n] != n else n) or languages[0]
+
+    chunk(2, "English sounds the child gets wrong", "butter",
+          "Tap every consonant the child says in error, in English.")
+    words = {i: w for grp in ENGLISH_CONSONANTS.values() for i, w, _ in grp}
+    sounds = st.pills("English sounds in error", list(words), selection_mode="multi",
+                      key="ec_sounds", label_visibility="collapsed",
+                      format_func=lambda i: f"/{i}/ {words[i]}") or []
+
+    chunk(3, "Patterns you notice", "pink", "Optional. Pick any that fit.")
+    pats = st.pills("Patterns", list(PATTERNS), selection_mode="multi", key="ec_pats",
+                    label_visibility="collapsed", format_func=lambda k: PATTERNS[k][0]) or []
+
+    chunk(4, "Errors in the home language", "sky")
+    home_too = st.toggle(f"The child makes similar errors in {lang} too", key="ec_home")
+
+    if not sounds and not pats:
+        st.markdown(f'<div class="empty"><div class="empty-art">{PERSONA_SVGS[1]}</div>'
+                    '<div class="empty-t">Pick a sound or a pattern</div><p>Results appear '
+                    'here as soon as you choose something above.</p></div>',
+                    unsafe_allow_html=True)
+        return
+
+    order = [i for grp in ENGLISH_CONSONANTS.values() for i, _, _ in grp]
+    sounds = [i for i in order if i in sounds]
+    explained, closer, no_data = classify_errors(lang, sounds, pats)
+    total = len(explained) + len(closer) + len(no_data)
+
+    st.header("Results")
+    seg = "".join(f'<span class="ecb-{k}" style="flex:{n}"></span>'
+                  for k, n in (("ok", len(explained)), ("look", len(closer)),
+                               ("none", len(no_data))) if n)
+    st.markdown(f"""
+<div class="ec-sum">
+  <div class="ec-big">{len(explained)}<span>of {total}</span></div>
+  <div class="ec-sum-r"><div class="ec-sum-t">errors are consistent with {lang}, according to
+  the cited sources.</div><div class="ecb">{seg}</div>
+  <div class="ec-key"><span><i class="ecb-ok"></i>Consistent with {lang} {len(explained)}</span>
+  <span><i class="ecb-look"></i>Look closer {len(closer)}</span>
+  <span><i class="ecb-none"></i>No data {len(no_data)}</span></div></div>
+</div>""", unsafe_allow_html=True)
+
+    def cards(items, cls):
+        return "".join(f'<div class="ec-card {cls}"><div class="ec-l">{l}</div><p>{r}</p>'
+                       + (f'<span class="ec-src">{short_cite(s)}</span>' if s else "")
+                       + "</div>" for l, r, s in items)
+    cols = [("ok", f"Consistent with {lang}", explained,
+             "These may come from the home language rather than a disorder."),
+            ("look", "Look closer", closer,
+             "The home language doesn't explain these. Consider the child's age, dialect, "
+             "and how the child says these sounds in the home language."),
+            ("none", "No data on this site", no_data,
+             "Not enough information here to say either way.")]
+    html = ""
+    for cls, title, items, hint in cols:
+        if items:
+            html += (f'<div class="ec-col"><div class="ec-h {cls}">{title}</div>'
+                     f'<p class="ec-hint">{hint}</p>{cards(items, cls)}</div>')
+    st.markdown(f'<div class="ec-cols">{html}</div>', unsafe_allow_html=True)
+
+    if home_too:
+        st.markdown(f'<div class="fact">{icon("bulb", 40)}<p>The child makes similar errors '
+                    f'in {lang} too. Errors that show up in every language a child speaks '
+                    'deserve a closer look, even when they also match the home language\'s '
+                    'sound system.</p></div>', unsafe_allow_html=True)
+
+    sources = list(dict.fromkeys(s for _, _, s in explained + closer if s))
+    st.caption("This is a starting point for clinical reasoning, not a diagnosis. Some "
+               "English sounds are learned late by all children, so the child's age matters "
+               "too. The SLP makes every clinical decision.")
+    c1, c2 = st.columns(2)
+    c1.download_button("Download these results", error_check_html(
+        lang, explained, closer, no_data, home_too, sources),
+        file_name=f"error-check-{lang.lower()}.html", mime="text/html",
+        icon=":material/print:", help="Open the file, then Print > Save as PDF.")
+    if c2.button(f"See {lang} in the Sound Explorer", key="ec_to_snd",
+                 icon=":material/graphic_eq:"):
+        st.session_state["snd_lang"] = lang
+        st.switch_page(PAGES["sounds"])
+    if sources:
+        with st.expander(f"Sources ({len(sources)})"):
+            for s in sources:
+                st.markdown(f"- {s}")
 
 
 # ---------------------------------------------------------------- Knowledge Library

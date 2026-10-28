@@ -799,6 +799,31 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-v
 .ph-v { font-weight: 700; font-size: 1.125rem; color: var(--teal); }
 .ph-e { font-family: var(--serif); font-style: italic; color: #44555B; font-size: 0.9375rem; }
 
+/* ---------- Error Check ---------- */
+.ec-sum { display: flex; gap: 2rem; align-items: center; padding: 1.75rem 2rem; border-radius: 22px;
+  background: var(--fog); border: 1px solid var(--rule); margin-bottom: 1.5rem; }
+.ec-big { font-size: 4rem; font-weight: 800; letter-spacing: -0.05em; line-height: 0.9; color: var(--teal);
+  display: flex; flex-direction: column; flex: none; }
+.ec-big span { font-size: 0.875rem; font-weight: 600; letter-spacing: 0; color: var(--slate); margin-top: 0.5rem; }
+.ec-sum-r { flex: 1; min-width: 0; }
+.ec-sum-t { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.9rem; }
+.ecb { display: flex; height: 0.9rem; border-radius: 999px; overflow: hidden; gap: 3px; }
+.ecb-ok { background: var(--teal); } .ecb-look { background: var(--gold); } .ecb-none { background: #C9D4D4; }
+.ec-key { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; margin-top: 0.75rem; font-size: 0.875rem; color: var(--slate); }
+.ec-key span { display: inline-flex; align-items: center; gap: 0.45rem; }
+.ec-key i { width: 0.75rem; height: 0.75rem; border-radius: 3px; }
+.ec-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.25rem; }
+.ec-h { font-weight: 800; font-size: 1.125rem; letter-spacing: -0.02em; padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--teal); }
+.ec-h.look { border-color: var(--gold); } .ec-h.none { border-color: #C9D4D4; }
+.ec-hint { font-size: 0.875rem !important; color: var(--slate); margin: 0.5rem 0 0.75rem; line-height: 1.5; }
+.ec-card { border-radius: 14px; padding: 0.85rem 1rem; margin-bottom: 0.6rem; background: var(--teal-50); }
+.ec-card.look { background: var(--gold-50); } .ec-card.none { background: var(--fog); }
+.ec-l { font-weight: 700; font-size: 1.0625rem; }
+.ec-card p { margin: 0.2rem 0 0; font-size: 0.9375rem !important; line-height: 1.5; color: #44555B; }
+.ec-src { display: inline-block; margin-top: 0.45rem; font-size: 0.75rem; font-weight: 600; color: var(--teal);
+  background: rgba(255,255,255,0.8); border-radius: 999px; padding: 0.1rem 0.6rem; }
+
 /* ---------- phones ---------- */
 @media (max-width: 720px) {
   :root { --section: 3.5rem; }
@@ -854,6 +879,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-v
   .m-right { padding-left: 3rem; }
   .snd-how { padding: 1.5rem; }
   .waffle { width: 210px; margin: 0 auto; }
+  .ec-sum { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem; }
+  .ec-big { flex-direction: row; align-items: baseline; gap: 0.6rem; font-size: 3.25rem; }
   .story-grid { grid-template-columns: 1fr; gap: 0.5rem; }
   .story-art { max-width: 12rem; margin: 0 auto; order: -1; }
   .persona-art { width: 6rem; }
@@ -927,6 +954,7 @@ TICKER_ITEMS = [
     "Now covering the top 10 home languages of California English learners",
     "Russian, Farsi, Filipino, Punjabi, and Korean just joined the Knowledge Library",
     "The Sound Explorer compares English consonants with seven home languages",
+    "New: the Error Check sorts a child's English errors by what the home language explains",
     "Every prompt cites its source",
     "Free, no account needed",
     "Built by a California State University, Fullerton Communication Sciences and "
@@ -1037,6 +1065,7 @@ def footer():
   State University, Fullerton.</p>
   <p>Support only. Not a diagnostic test.</p></div>
   <div><div class="col-title">Use it</div>
+  <a href="error-check" target="_self">Error Check</a>
   <a href="new-assessment" target="_self">New Assessment</a>
   <a href="saved-cases" target="_self">Saved Cases</a>
   <a href="family-interview" target="_self">Family Interview</a>
