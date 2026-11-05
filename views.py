@@ -1683,6 +1683,8 @@ def about():
     often get misidentified with speech disorders. I know, because I was one of them.</p>
     <p>I want to make sure that SLPs have appropriate resources to make the best decisions
     for their clientele. CLD Navigator is my start on that.</p>
+    <p>I also built <a href="https://audreypham2007-spec.github.io/nhim/" target="_blank">Nhím</a>,
+    a free app that teaches Vietnamese tones to heritage speakers and their families.</p>
     <div class="sig">Audrey Pham</div>
   </div>
 </div>""", unsafe_allow_html=True)

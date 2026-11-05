@@ -71,11 +71,18 @@ Python, Streamlit, SQLAlchemy, SQLite, pandas
 | `sample_data.py` | The made-up demo cases |
 | `language_notes.json` | Research notes for the Knowledge Library |
 | `.streamlit/config.toml` | Site colors and font |
+| `tests/smoke_test.py` | Opens every page and reports errors |
 
 ## What I'd improve next
 I would like to get feedback from practicing SLPs, as well as more experienced
 coders, to improve my website. I would love to add more languages to the
 knowledge library, as well as cite research for every rule.
+
+## Check that every page works
+From the project folder, run `python tests/smoke_test.py`. It opens all 11 pages on a temporary copy of the project and prints PASS or FAIL for each.
+
+## Also by me
+[Nhím](https://audreypham2007-spec.github.io/nhim/), a free app that teaches Vietnamese tones to heritage speakers and their families.
 
 ## Run it yourself
     pip install -r requirements.txt
