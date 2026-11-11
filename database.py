@@ -6,9 +6,27 @@ from datetime import datetime
 from sqlalchemy import ForeignKey, Text, create_engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, sessionmaker
 
-# Where the database is saved (a file on your computer for now)
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///cld_navigator.db")
-engine = create_engine(DATABASE_URL)
+# Where the database is saved.
+# Online: set DATABASE_URL in Streamlit secrets to a hosted Postgres (Neon or Supabase)
+# so saved cases and feedback survive app restarts.
+# On your computer with no DATABASE_URL: a local SQLite file.
+def _get_database_url():
+    url = os.getenv("DATABASE_URL")
+    if not url:
+        try:
+            import streamlit as st
+            url = st.secrets.get("DATABASE_URL")
+        except Exception:
+            url = None
+    url = url or "sqlite:///cld_navigator.db"
+    # Some hosts give "postgres://", which SQLAlchemy 2 does not accept
+    if url.startswith("postgres://"):
+        url = "postgresql://" + url[len("postgres://"):]
+    return url
+
+
+DATABASE_URL = _get_database_url()
+engine = create_engine(DATABASE_URL, pool_pre_ping=True)
 Session = sessionmaker(bind=engine)
 
 
