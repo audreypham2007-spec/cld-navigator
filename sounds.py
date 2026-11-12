@@ -376,11 +376,29 @@ PRATH_FULL = ("Prath, S. (n.d.). Quick rules: Spanish phonology. Bilinguistics. 
 SHORT.update({PRATH_FULL: "Prath (Bilinguistics)", PEARSON_1997_FULL: "Pearson et al. (1997)",
               GIBSON_FULL: "Gibson et al. (2012)"})
 
+BILING_TOP12 = ("Bilinguistics. (n.d.). Top 12 errors in speech-language reports for bilingual "
+                "students. https://bilinguistics.com/top-12-errors-in-speech-language-reports-"
+                "for-bilingual-students/")
+BILING_DOD_VIETNAMESE = ("Bilinguistics. (2014). Difference vs. disorder: Vietnamese. "
+                         "https://bilinguistics.com/wp-content/uploads/2014/07/Difference-vs-"
+                         "Disorder-Vietnamese.pdf")
+BILING_DOD = ("Bilinguistics. (2014). Difference or disorder? (p. 17). "
+              "https://bilinguistics.com/wp-content/ebooks/DoDdigitalversion/files/basic-html/"
+              "page17.html")
+SHORT.update({BILING_TOP12: "Bilinguistics", BILING_DOD_VIETNAMESE: "Bilinguistics (2014)",
+              BILING_DOD: "Bilinguistics (2014)"})
+
 # Error patterns an SLP might see in a child's English, and which home languages the
 # cited sources link them to: {key: (label, {language: (why, source)})}.
+# Sound patterns come first, then grammar patterns (grammatical
+# morphemes and small words). Grammar patterns were added after feedback from
+# Dr. Lei Sun (CSULB), who suggested covering variations in grammatical morphemes.
+# A language is linked to a pattern only when a cited source says so.
 PATTERNS = {
     "final": ("Drops or changes final consonants", {
         "Spanish": ("Only five consonants end Spanish words: l, r, d, n, and s.", ASHA_SPANISH),
+        "Korean": ("Korean words end in only a few consonants: p, t, k, m, n, and ng.",
+                   BILING_TOP12),
     }),
     "clusters": ("Simplifies consonant clusters, like plank to pank", {
         "Spanish": ("Simplified final clusters in English may reflect Spanish influence.",
@@ -396,27 +414,70 @@ PATTERNS = {
                      "meaning.", BILING_TAGALOG),
         "Farsi": ("Farsi stress usually falls on the last stem syllable.", MULTICSD_FARSI),
     }),
-    "articles": ("Leaves out a, an, or the", {
-        "Cantonese": ("Cantonese has no articles.", BILING_CANTONESE),
-        "Punjabi": ("Punjabi has no articles.", BILING_PUNJABI),
-        "Russian": ("Russian has no articles.", BILING_RUSSIAN),
-    }),
-    "endings": ("Leaves off plural -s or past tense -ed", {
+    # ---- grammar patterns (grammatical morphemes and small words)
+    "plural": ("Grammar: leaves off plural -s, like two dog", {
         "Cantonese": ("Cantonese doesn't mark plurals or tense on words.", BILING_CANTONESE),
+        "Mandarin": ("Mandarin rarely uses plural endings.", BILING_TOP12),
+        "Vietnamese": ("Vietnamese puts a number word before the noun instead of adding -s, "
+                       "as in “three bird.”", BILING_DOD_VIETNAMESE),
     }),
-    "to_be": ("Leaves out am, is, or are", {
+    "past": ("Grammar: leaves off past tense -ed, like yesterday I walk", {
+        "Cantonese": ("Cantonese doesn't mark plurals or tense on words.", BILING_CANTONESE),
+        "Mandarin": ("Mandarin uses time words, not verb endings, to show tense.",
+                     BILING_TOP12),
+        "Vietnamese": ("Vietnamese shows tense with context and added words, not verb "
+                       "endings.", BILING_DOD_VIETNAMESE),
+    }),
+    "third_s": ("Grammar: leaves off -s on verbs, like he go", {
+        "Mandarin": ("Mandarin verbs don't change to agree with the subject.", BILING_TOP12),
+        "Vietnamese": ("Vietnamese verbs don't change to agree with the subject.",
+                       BILING_TOP12),
+    }),
+    "possessive": ("Grammar: shows ownership without 's, like the shoe of him", {
+        "Vietnamese": ("Vietnamese shows ownership with a phrase after the noun, not 's.",
+                       BILING_DOD_VIETNAMESE),
+    }),
+    "to_be": ("Grammar: leaves out am, is, or are, like she happy", {
         "Arabic": ("Forms of “to be” may be left out, as in “I boy.”",
                    BILING_ARABIC),
+        "Mandarin": ("Mandarin often leaves out “to be” in present-tense sentences.",
+                     BILING_TOP12),
         "Punjabi": ("Punjabi often leaves out “to be.”", BILING_PUNJABI),
         "Russian": ("Russian has no present-tense “to be.”", BILING_RUSSIAN),
     }),
-    "verb_last": ("Puts the verb at the end of the sentence", {
+    "articles": ("Grammar: leaves out a, an, or the, like I want apple", {
+        "Cantonese": ("Cantonese has no articles.", BILING_CANTONESE),
+        "Korean": ("Korean has no articles.", BILING_TOP12),
+        "Mandarin": ("Mandarin has no articles.", BILING_TOP12),
+        "Punjabi": ("Punjabi has no articles.", BILING_PUNJABI),
+        "Russian": ("Russian has no articles.", BILING_RUSSIAN),
+        "Vietnamese": ("Vietnamese uses classifiers instead of articles.", BILING_TOP12),
+    }),
+    "he_she": ("Grammar: mixes up he and she", {
+        "Cantonese": ("Cantonese pronouns don't mark he or she.", BILING_CANTONESE),
+        "Mandarin": ("Spoken Mandarin uses one word, tā, for he, she, and it.",
+                     BILING_TOP12),
+    }),
+    "no_subject": ("Grammar: leaves out the subject, like is raining", {
+        "Korean": ("Korean often leaves out pronouns when the subject is clear.",
+                   BILING_TOP12),
+        "Spanish": ("Spanish lets speakers drop the subject pronoun.", BILING_TOP12),
+    }),
+    "negation": ("Grammar: puts no before the verb, like I no want play", {
+        "Vietnamese": ("Vietnamese puts “no” before the verb.", BILING_DOD_VIETNAMESE),
+    }),
+    "questions": ("Grammar: asks without do or flipped word order, like who want eat", {
+        "Vietnamese": ("Vietnamese asks questions with question words and intonation, and "
+                       "keeps subject-verb-object order.", BILING_DOD_VIETNAMESE),
+    }),
+    "adjective_after": ("Grammar: puts the adjective after the noun, like the chair blue", {
+        "Spanish": ("Spanish adjectives follow the noun, as in la silla azul.", BILING_DOD),
+        "Vietnamese": ("Vietnamese adjectives follow the noun.", BILING_DOD_VIETNAMESE),
+    }),
+    "verb_last": ("Grammar: puts the verb at the end, like I cake eat", {
         "Punjabi": ("Punjabi uses subject-object-verb order.", BILING_PUNJABI),
         "Farsi": ("Farsi uses subject-object-verb order.", MULTICSD_FARSI),
         "Korean": ("Korean uses subject-object-verb order.", MULTICSD_KOREAN),
-    }),
-    "he_she": ("Mixes up he and she", {
-        "Cantonese": ("Cantonese pronouns don't mark he or she.", BILING_CANTONESE),
     }),
 }
 
