@@ -1326,7 +1326,8 @@ def error_check():
                       key="ec_sounds", label_visibility="collapsed",
                       format_func=lambda i: f"/{i}/ {words[i]}") or []
 
-    chunk(3, "Patterns you notice", "pink", "Optional. Pick any that fit.")
+    chunk(3, "Patterns you notice", "pink", "Optional. Sound patterns first, then grammar patterns "
+          "(word endings and small words).")
     pats = st.pills("Patterns", list(PATTERNS), selection_mode="multi", key="ec_pats",
                     label_visibility="collapsed", format_func=lambda k: PATTERNS[k][0]) or []
 
@@ -1526,6 +1527,9 @@ def all_references():
     for data in TONES.values():
         for src in data["sources"]:
             add(src, "Speech sounds")
+    for _, by_lang in PATTERNS.values():
+        for language, (_, src) in by_lang.items():
+            add(src, language)
     add(snd.SCHIFF_FULL, "Arabic")
     add(NEW_AMERICA, "Bilingual development")
     add(ASHA_INTERPRETERS, "Assessment")
