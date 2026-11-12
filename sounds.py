@@ -391,8 +391,8 @@ SHORT.update({BILING_TOP12: "Bilinguistics", BILING_DOD_VIETNAMESE: "Bilinguisti
 # Error patterns an SLP might see in a child's English, and which home languages the
 # cited sources link them to: {key: (label, {language: (why, source)})}.
 # Sound patterns come first, then grammar patterns (grammatical
-# morphemes and small words). Grammar patterns were added after feedback from
-# Dr. Lei Sun (CSULB), who suggested covering variations in grammatical morphemes.
+# morphemes and small words). Grammar patterns were added after an SLP professor
+# suggested covering variations in grammatical morphemes.
 # A language is linked to a pattern only when a cited source says so.
 PATTERNS = {
     "final": ("Drops or changes final consonants", {
