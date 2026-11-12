@@ -14,6 +14,7 @@ make the best decisions for their clientele.
 
 ## What it does
 - Error Check: enter a child's English sound errors and error patterns plus the home language, and the site sorts each one into consistent with the home language (with its source), look closer, or no data. Nothing is saved, and the result downloads as a printable page
+- Error Check grammar patterns: 12 grammatical morpheme and word-order patterns, such as plural -s, past tense -ed, third person -s, possessive 's, articles, and "to be." Each links to a home language only when a cited source says so. Added after an SLP professor suggested covering grammatical morphemes
 - Saves case information using a code, never a child's name (codes must include a number)
 - Records up to four languages per child, with how much the child hears and speaks each one
 - Exposure calculator turns a family's weekly routine into hears and speaks percentages
