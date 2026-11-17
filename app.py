@@ -5,7 +5,7 @@
 import streamlit as st
 
 import views
-from common import PAGES, announcement_bar, apply_style, footer
+from common import PAGES, apply_style, footer
 
 st.set_page_config(page_title="CLD Navigator", page_icon=":material/record_voice_over:", layout="centered")
 apply_style()
@@ -43,6 +43,5 @@ MENU = {
                PAGES["insights"]],
 }
 page = st.navigation(MENU, position="top")
-announcement_bar()
 page.run()
 footer()

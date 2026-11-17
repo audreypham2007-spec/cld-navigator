@@ -15,7 +15,7 @@ STYLE = """
         max-width: 760px; margin: 32px auto; padding: 0 28px; line-height: 1.55; font-size: 15px;}
   .band {display: flex; justify-content: space-between; align-items: center;
          background: linear-gradient(160deg, #11606A, var(--teal) 55%, #0A3B41); color: #fff;
-         border-radius: 18px; padding: 16px 22px; margin-bottom: 26px;}
+         border-radius: 6px; padding: 16px 22px; margin-bottom: 26px;}
   .band .brand {display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px;
                 letter-spacing: -0.02em;}
   .band .mk {width: 22px; height: 15px; border-radius: 2px;
@@ -182,7 +182,7 @@ CARD_STYLE = """
 <style>
   .hello svg {width: 100%; height: auto; display: block; margin: 4px 0 6px;}
   .cards {display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;}
-  .card {border: 1px solid var(--rule); border-radius: 14px; padding: 14px 16px; border-top: 5px solid var(--teal);
+  .card {border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; border-top: 5px solid var(--teal);
          break-inside: avoid;}
   .card:nth-child(2) {border-top-color: var(--gold);} .card:nth-child(3) {border-top-color: var(--berry);}
   .card:nth-child(4) {border-top-color: #6B4E9B;}
@@ -192,7 +192,7 @@ CARD_STYLE = """
   .card .t {font-weight: 700; font-size: 15.5px; margin: 6px 0 4px; letter-spacing: -0.01em;}
   .card p {margin: 0; font-family: 'Literata', Georgia, serif; font-size: 14px; line-height: 1.5;}
   .card .source {display: block; margin-top: 6px;}
-  .ask {background: var(--teal50); border-radius: 14px; padding: 12px 18px; margin-top: 16px;}
+  .ask {background: var(--teal50); border-radius: 6px; padding: 12px 18px; margin-top: 16px;}
   .ask h2 {border: 0; margin-top: 4px;}
   .tiles {display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;}
   .tile2 {background: var(--teal50); border-radius: 12px; padding: 10px;}

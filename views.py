@@ -1,6 +1,7 @@
 # views.py - one function per page of the website.
 
 import re
+from urllib.parse import quote
 from datetime import date
 
 import pandas as pd
@@ -237,10 +238,9 @@ names the study behind it, so the SLP can judge how much weight to give it. Swit
 languages above to compare.</p>
 """, unsafe_allow_html=True)
 
-    st.markdown(f"""
-<div class="cited"><div class="cited-label">The Knowledge Library cites research from</div>
-<div class="cited-list">{"".join(f"<span>{j}</span>" for j in CITED_IN)}</div></div>
-""", unsafe_allow_html=True)
+    journals = ", ".join(f"<i>{j}</i>" for j in CITED_IN[:-1])
+    st.markdown(f'<p class="cited">The Knowledge Library cites research from {journals}, '
+                f'and {CITED_IN[-1]}.</p>', unsafe_allow_html=True)
 
     st.header("Five myths about bilingual children")
     st.markdown('<p class="section-sub">Each one can push a child toward the wrong '
@@ -266,7 +266,7 @@ languages above to compare.</p>
 <p>“Bilingual children who speak less-common languages often get misidentified with
 speech disorders. I know, because I was one of them. I spoke Vietnamese only at home,
 and when I started going to an American public school, my words were jumbled up.”</p>
-<div class="who"><span class="mono">AP</span><div><div class="sign">Audrey Pham</div>
+<div class="who"><div><div class="sign">Audrey Pham</div>
 <div class="role">Communication Sciences and Disorders, California State University, Fullerton</div></div></div>
 </div><div class="story-art">{CHILD_SVG}</div></div>
 """, unsafe_allow_html=True)
@@ -281,7 +281,7 @@ and when I started going to an American public school, my words were jumbled up.
             tag, badge, first = CAROUSEL.get(name, ("", "", info.get("summary", "")))
             color = CARD_INK[i % len(CARD_INK)]
             cards.append(
-                f'<a class="card" href="knowledge-library" target="_self" '
+                f'<a class="card" href="knowledge-library?lang={quote(name)}" target="_self" '
                 f'style="background:{TINT_BG[i % len(TINT_BG)]};'
                 f'color:{CARD_INK[i % len(CARD_INK)]} !important">'
                 f'<div class="card-top"><span class="card-tag" style="color:{color}">{tag}'
@@ -317,13 +317,13 @@ consonants that aren't in Spanish.</p>""", unsafe_allow_html=True)
     st.header("Built for")
     st.markdown(f"""
 <div class="personas">
-  <div class="persona"><div class="persona-art">{PERSONA_SVGS[0]}</div><div class="who" style="color:#0E4F57">School SLPs</div>
+  <div class="persona"><div class="who">School SLPs</div>
   <p>Sort out a referral for a bilingual student before the IEP meeting, with sources
   you can cite.</p></div>
-  <div class="persona"><div class="persona-art">{PERSONA_SVGS[1]}</div><div class="who" style="color:#B3205A">Clinic SLPs</div>
+  <div class="persona"><div class="who">Clinic SLPs</div>
   <p>Walk into an evaluation knowing what's typical for the child's home language and
   age.</p></div>
-  <div class="persona"><div class="persona-art">{PERSONA_SVGS[2]}</div><div class="who" style="color:#6B4E9B">SLP grad students</div>
+  <div class="persona"><div class="who">SLP grad students</div>
   <p>Learn how language exposure and home-language research change an assessment.</p></div>
 </div>""", unsafe_allow_html=True)
 
@@ -1439,8 +1439,10 @@ def library():
         if not shown:
             st.caption("No language notes match that search.")
     else:
+        asked = st.query_params.get("lang")
+        start = asked if asked in notes else list(notes)[0]
         picked = st.segmented_control(
-            "Language", list(notes), default=list(notes)[0], key="lib_lang",
+            "Language", list(notes), default=start, key="lib_lang",
             format_func=lambda n: f"{n} ({AUTONYMS[n]})" if n in AUTONYMS else n
             ) or list(notes)[0]
         shown = {picked: notes[picked].get("sections", {})}
